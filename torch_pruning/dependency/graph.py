@@ -467,7 +467,7 @@ class DependencyGraph(object):
         if forward_fn is not None:
             out = forward_fn(model, example_inputs)
         elif isinstance(example_inputs, dict):
-            out = model(**example_inputs)
+            out = model(example_inputs)
         else:
             try:
                 out = model(*example_inputs)
