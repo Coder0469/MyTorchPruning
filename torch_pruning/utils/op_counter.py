@@ -30,7 +30,7 @@ def count_ops_and_params(model, example_inputs, layer_wise=False):
     if isinstance(example_inputs, (tuple, list)):
         _ = flops_model(*example_inputs)
     elif isinstance(example_inputs, dict):
-        _ = flops_model(**example_inputs)
+        _ = flops_model(example_inputs)
     else:
         _ = flops_model(example_inputs)
     flops_count, params_count, _layer_flops, _layer_params = flops_model.compute_average_flops_cost()
